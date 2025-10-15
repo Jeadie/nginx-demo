@@ -93,10 +93,10 @@ datasets:
           overlap_size: 32
     acceleration:
       enabled: true
-      engine: duckdb
-      mode: file
-      params:
-        duckdb_file: docs3.db
+      # engine: duckdb
+      # mode: file
+      # params:
+      #   duckdb_file: docs3.db
     params:
       file_format: md
       ftp_user: spiceai
