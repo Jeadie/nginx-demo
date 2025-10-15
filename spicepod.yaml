@@ -96,8 +96,6 @@ datasets:
       engine: duckdb
       mode: file
       snapshots: disabled
-      refresh_sql: |
-        select location, content from nginx.docs 
       params:
         duckdb_file: docs2.db
     params:
