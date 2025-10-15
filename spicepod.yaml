@@ -2,15 +2,15 @@ version: v1beta1
 kind: Spicepod
 name: nginx-demo
 
-snapshots:
-  enabled: false
-  location: s3://spiceai-demo-snapshots/nginx-demo/
-  bootstrap_on_failure_behavior: fallback
-  params:
-    s3_auth: key
-    s3_key: ${secrets:SPICE_S3_NGINX_KEY}
-    s3_secret: ${secrets:SPICE_S3_NGINX_SECRET}
-    s3_region: us-east-1
+# snapshots:
+#   enabled: false
+#   location: s3://spiceai-demo-snapshots/nginx-demo/
+#   bootstrap_on_failure_behavior: fallback
+#   params:
+#     s3_auth: key
+#     s3_key: ${secrets:SPICE_S3_NGINX_KEY}
+#     s3_secret: ${secrets:SPICE_S3_NGINX_SECRET}
+#     s3_region: us-east-1
 
 datasets:
   - from: delta_lake:s3://databricks-workspace-stack-473ec-bucket/unity-catalog/8429759719709712/f5_demo/__unitystorage/catalogs/5b92ca23-f83d-455b-837d-e193a6073bdf/tables/ecc99631-883f-4b7e-baf9-99b00c7fde44
