@@ -3,7 +3,7 @@ kind: Spicepod
 name: nginx-demo
 
 snapshots:
-  enabled: true
+  enabled: false
   location: s3://spiceai-demo-snapshots/nginx-demo/
   bootstrap_on_failure_behavior: fallback
   params:
@@ -53,7 +53,7 @@ datasets:
       enabled: true
       engine: duckdb
       mode: file
-      snapshots: create_only # enabled
+      snapshots: disabled # enabled
       params:
         duckdb_file: tickets.db
     params:
@@ -87,7 +87,7 @@ datasets:
       enabled: true
       engine: duckdb
       mode: file
-      snapshots: enabled
+      snapshots: disabled
       params:
         duckdb_file: docs.db
     params:
@@ -149,7 +149,7 @@ datasets:
       refresh_jitter_max: 15m
       engine: duckdb
       mode: file
-      snapshots: enabled
+      snapshots: disabled
       params:
         duckdb_file: pulls.db
     columns:
@@ -183,7 +183,7 @@ datasets:
       refresh_jitter_max: 15m
       engine: duckdb
       mode: file
-      snapshots: enabled
+      snapshots: disabled
       params:
         duckdb_file: commits.db
     columns:
