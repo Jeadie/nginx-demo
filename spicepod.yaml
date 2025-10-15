@@ -74,6 +74,14 @@ datasets:
   - from: ftp://ftp.spiceai.us/nginx/docs/
     name: nginx.docs
     description: Documentation of the Nginx project. https://nginx.org/en/docs/.
+    vectors:
+      enabled: true
+      engine: s3_vectors
+      params:
+        s3_vectors_aws_region: us-east-1
+        s3_vectors_bucket: jeadie-nginx-docx
+        s3_vectors_aws_access_key_id: ${secrets:AWS_S3_VECTORS_ACCESS_KEY}
+        s3_vectors_aws_secret_access_key: ${secrets:AWS_S3_VECTORS_SECRET_ACCESS_KEY}
     embeddings:
       - column: content
         use: hf_minilm
