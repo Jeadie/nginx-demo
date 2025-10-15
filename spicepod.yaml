@@ -71,7 +71,7 @@ datasets:
           row_id:
             - id
 
-  - from: spice.ai/spicehq/nginx-demo/datasets/spice.nginx.docs
+  - from: ftp://ftp.spiceai.us/nginx/docs/
     name: nginx.docs
     description: Documentation of the Nginx project. https://nginx.org/en/docs/.
     vectors:
@@ -97,10 +97,11 @@ datasets:
       mode: file
       snapshots: disabled
       params:
-        duckdb_file: docs2.db
+        duckdb_file: docs3.db
     params:
-      spiceai_api_key: ${ secrets:SPICEAI_NGINX_API_KEY }
-      spiceai_endpoint: https://flight.spiceai.io
+      file_format: md
+      ftp_user: spiceai
+      ftp_pass: ${secrets:SPICE_FTP_PASS}
 
   - from: github:github.com/nginx/nginx/issues
     name: nginx.issues
